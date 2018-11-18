@@ -5,86 +5,103 @@
 //  Created by obada on 10/12/18.
 //  Copyright © 2018 Abdo. All rights reserved.
 //
-
+/*
 import UIKit
+import XLPagerTabStrip
+import Alamofire
+import SwiftyJSON
 
 class trip: UITableViewController {
-
+    
+    let url = "https://travelagenciesdeals.com/api/trips"
+    
+    let ofeer = [trips]()
+    
+    var window: UIWindow?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        send()
+        
     }
+    
+        //let sb = UIStoryboard(name: "login", bundle: nil)
+        
+        
+    
+       
+       
+    
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        let cellaya = tableView.dequeueReusableCell(withIdentifier: "cellaya", for: indexPath)
+        //let cell = tableView.dequeueReusableCell(withIdentifier: "cellaya", for: indexPaath)
+        
+        print("4444444444444444444444444444444")
+        //cellay.date.text = "sdssddsdsdsddss"
+        print(ofeer[indexPath.row])
+        
+        
+        return cellaya
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return ofeer.count
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+/*
+    func send(){
+        var vc:UIViewController
+        let def = UserDefaults.standard
+        if let id = def.object(forKey: "userid") {
+            
+            print("@@@@@@@@@@@@@@@@@@@@@@@@###############")
+            let parm = [
+                "user_id":id
+            ]
+            
+            Alamofire.request(url, method: .post, parameters: parm, encoding: URLEncoding.default, headers: nil).responseJSON { re in
+                switch re.result
+                {
+                case .failure(let erro):
+                    print("********////",erro)
+                case .success(let value):
+                    
+                    let jsoncode = JSON(value)
+                    guard let data = jsoncode["data"].array else { return }
+                    
+                   /* for ofeer in data{
+                        let trip = trips()
+                        trip.date = (ofeer["date"].string)!
+                        trip.logo = (ofeer["logo"].string)!
+                        trip.photo = (ofeer["photo"].string)!
+                        trip.price = (ofeer["price"].int)!
+                        
+                       */
+  /*
+                    }
+                }
+            }
+            
+        }else{
+            print("+++++++++++++++++++++++++++++++++++++++")
+            
+        }
+        
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+*/
 }
+
+extension trip : IndicatorInfoProvider{
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: "famouse")
+    }
+    
+    
+}
+
+*/

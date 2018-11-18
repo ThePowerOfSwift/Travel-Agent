@@ -7,18 +7,27 @@
 //
 
 import UIKit
+import XLPagerTabStrip
 
-class profile_xlpager: UIViewController {
+class profile_xlpager: ButtonBarPagerTabStripViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+            loadViewdisign()
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+  
+    override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
+        let child_1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "offer")
+        let child_2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "travel")
+        let child_3 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "info")
+        
+        return[child_1,child_2,child_3]
     }
     
 
@@ -31,5 +40,18 @@ class profile_xlpager: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    func loadViewdisign() {
+        
+        
+        settings.style.buttonBarItemBackgroundColor = UIColor(red: 0/255.0, green: 194/255.0, blue: 180/255.0, alpha: 1.0)
+        
+        
+        changeCurrentIndexProgressive = {(oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
+            guard changeCurrentIndex == true else { return }
+            oldCell?.label.tintColor = UIColor.white
+            
+            
+            newCell?.label.tintColor = UIColor.white
+        }
+    }
 }

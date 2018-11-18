@@ -34,12 +34,6 @@ class bar_menu: ButtonBarPagerTabStripViewController {
         settings.style.buttonBarItemBackgroundColor = UIColor(red: 0/255.0, green: 194/255.0, blue: 180/255.0, alpha: 1.0)
         
         
-        
-        
-        
-        
-        
-        
         changeCurrentIndexProgressive = {(oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
             guard changeCurrentIndex == true else { return }
             oldCell?.label.tintColor = UIColor.white

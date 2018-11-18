@@ -8,14 +8,28 @@
 
 import UIKit
 
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+//   let sb = UIStoryboard(name: "login", bundle: nil)
+    
 
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+      //  var vc:UIViewController
+       // let def = UserDefaults.standard
+       // if let id = def.object(forKey: "userid") {
+            
+       // vc = sb.instantiateViewController(withIdentifier: "best")
+            
+       // window?.rootViewController = vc
+            
+        //}
+        
+        
         return true
     }
 

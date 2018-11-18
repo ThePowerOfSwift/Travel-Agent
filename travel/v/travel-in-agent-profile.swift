@@ -7,8 +7,19 @@
 //
 
 import UIKit
+import XLPagerTabStrip
 
-class travel_in_agent_profile: UIViewController {
+
+class travel_in_agent_profile: UIViewController,UITableViewDataSource,UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5 
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellaya", for: indexPath)
+        return cell
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,5 +42,12 @@ class travel_in_agent_profile: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
+
+    extension travel_in_agent_profile : IndicatorInfoProvider{
+        func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+            return IndicatorInfo(title: "Travels")
+        }
+        
 
 }

@@ -55,6 +55,7 @@ class ViewController_main_menu: UIViewController,UITableViewDelegate,UITableView
         
         
         
+        
         // hna fe 7aga asmha imgresou
         cellay.pic.kf.setImage(with: resournew)
         cellay.photo.kf.setImage(with: resournewpic)

@@ -28,7 +28,7 @@ class besttrips: NSObject {
         self.price = pricee
         self.logo = base+logoo
         self.photo = base+photoo
-        self.titel = ""
+        self.titel = titell
         
     }
     

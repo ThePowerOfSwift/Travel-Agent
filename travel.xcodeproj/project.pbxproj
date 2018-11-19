@@ -39,8 +39,8 @@
 		518BADCEDFBC0833AF58ACC4 /* Pods_travel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03BE00D51203733D4A0EBB2B /* Pods_travel.framework */; };
 		AF1945662170EB8A00228BE3 /* trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1945652170EB8A00228BE3 /* trip.swift */; };
 		AF48986221A034160061CB3B /* bestofers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF48986121A034160061CB3B /* bestofers.swift */; };
+		AFBE8CB121A209F5009212B4 /* companiesmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBE8CB021A209F5009212B4 /* companiesmodel.swift */; };
 		AFE5E7092170CC48008945F8 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE5E7082170CC48008945F8 /* TableViewController.swift */; };
-		AFE9ED182170F73100E25329 /* trips.swif in Sources */ = {isa = PBXBuildFile; fileRef = AFE9ED172170F73100E25329 /* trips.swif */; };
 		AFF1921F21642B9300DFB75D /* imgpicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1921E21642B9300DFB75D /* imgpicker.swift */; };
 		AFF6C94D2163AA2E00D5AA5E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFF6C94C2163AA2E00D5AA5E /* GoogleService-Info.plist */; };
 		C6B34C41EC4D929D7A3FA2B4 /* Pods_travelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B614F510F1A0593294ECAD /* Pods_travelTests.framework */; };
@@ -111,8 +111,8 @@
 		72B614F510F1A0593294ECAD /* Pods_travelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_travelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF1945652170EB8A00228BE3 /* trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trip.swift; sourceTree = "<group>"; };
 		AF48986121A034160061CB3B /* bestofers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bestofers.swift; sourceTree = "<group>"; };
+		AFBE8CB021A209F5009212B4 /* companiesmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = companiesmodel.swift; sourceTree = "<group>"; };
 		AFE5E7082170CC48008945F8 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		AFE9ED172170F73100E25329 /* trips.swif */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = trips.swif; sourceTree = "<group>"; };
 		AFF1921E21642B9300DFB75D /* imgpicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imgpicker.swift; sourceTree = "<group>"; };
 		AFF6C94C2163AA2E00D5AA5E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -203,10 +203,10 @@
 		2BD4B2FA214F5B8B0033E557 /* m */ = {
 			isa = PBXGroup;
 			children = (
-				AFE9ED172170F73100E25329 /* trips.swif */,
 				AFF6C94C2163AA2E00D5AA5E /* GoogleService-Info.plist */,
 				2B0038AF2153AD480047FC25 /* Assets.xcassets */,
 				AF48986121A034160061CB3B /* bestofers.swift */,
+				AFBE8CB021A209F5009212B4 /* companiesmodel.swift */,
 			);
 			path = m;
 			sourceTree = "<group>";
@@ -508,12 +508,12 @@
 				2B28DEAC215A5B04001D3C6F /* profile-xlpager.swift in Sources */,
 				2B0038B62153C7990047FC25 /* tab_favo.swift in Sources */,
 				2BDDAEEF2153DA090014722D /* bar_company.swift in Sources */,
-				AFE9ED182170F73100E25329 /* trips.swif in Sources */,
 				AF1945662170EB8A00228BE3 /* trip.swift in Sources */,
 				AFF1921F21642B9300DFB75D /* imgpicker.swift in Sources */,
 				2BDDF4EA21511BD800221626 /* newuser.swift in Sources */,
 				2B0038B42153C6CF0047FC25 /* tab_setting.swift in Sources */,
 				2B0038B82153C7BF0047FC25 /* tab_home.swift in Sources */,
+				AFBE8CB121A209F5009212B4 /* companiesmodel.swift in Sources */,
 				2BDEF35C215131D900524857 /* retuernpassword.swift in Sources */,
 				2BDDAEED2153D9BC0014722D /* bar_best.swift in Sources */,
 				2BD4B2CB214F5A220033E557 /* AppDelegate.swift in Sources */,

@@ -10,6 +10,7 @@ pod 'XLPagerTabStrip'
 pod 'Alamofire'
 pod 'SwiftyJSON'
 pod 'Kingfisher'
+pod 'Calendar-iOS'
 
 
 

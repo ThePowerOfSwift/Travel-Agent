@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
 class changepass: UIViewController {
 
@@ -16,15 +18,69 @@ class changepass: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    let url = "https://travelagenciesdeals.com/api/resetpassword"
+    @IBOutlet weak var mail: UITextField!
+    @IBOutlet weak var pass: UITextField!
+    
+    @IBAction func send(_ sender: Any) {
+        
+        if (mail.text?.isEmpty)!{
+            if (pass.text?.isEmpty)!{
+                let alert = UIAlertController(title: "Alert", message: "You need fill it  ", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }else{send()
+            print("dp**********************")
+        }
+        
+        
+        
+        
+        
+        
     }
-    */
+    
+    
+    
+    
+    func send(){
+        
+        var id = mail.text
+        var codee = pass.text
+        print("@@@@@@@@@@@@@@@@@@@@@@@@###############")
+        let parm = [
+            "email":id,
+            "password" :codee
+            
+        ]
+        
+        Alamofire.request(url, method: .post, parameters: parm, encoding: URLEncoding.default, headers: nil).responseJSON { re in
+            switch re.result
+            {
+            case .failure(let erro):
+                print("********////",erro)
+            case .success(let value):
+                
+                let jsoncode = JSON(value)
+                guard let data = jsoncode["success"].int else { return }
+                if(data == 1){
+                    let alert = UIAlertController(title: "Alert", message: "this address dont exist ", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    
+                }else{
+                    self.performSegue(withIdentifier: "done", sender: nil)
+                }
+                
+                
+                
+                
+            }
+        }
+        
+        
+    }
+
 
 }

@@ -36,12 +36,10 @@ class ViewController_main_menu: UIViewController,UITableViewDelegate,UITableView
         // Do any additional setup after loading the view.
     }
     
+  
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellay = tableView.dequeueReusableCell(withIdentifier: "cellaya" , for: indexPath) as! cellHome
-        print("4444444444444444444444444444444")
-        //dateoftriips.text = ofeer[indexPath.row].date ?? ""
-        print(ofeer[indexPath.row].date)
         cellay.lblDate.text = ofeer[indexPath.row].date
         cellay.price.text = String(ofeer[indexPath.row].price)
        cellay.titel.text = ofeer[indexPath.row].titel
@@ -51,12 +49,7 @@ class ViewController_main_menu: UIViewController,UITableViewDelegate,UITableView
         let resourpic = NSURL(string: ofeer[indexPath.row].photo)
         let resournewpic = ImageResource(downloadURL: resour as! URL)
 
-        
-        
-        
-        
-        
-        // hna fe 7aga asmha imgresou
+
         cellay.pic.kf.setImage(with: resournew)
         cellay.photo.kf.setImage(with: resournewpic)
         return cellay
@@ -66,15 +59,10 @@ class ViewController_main_menu: UIViewController,UITableViewDelegate,UITableView
     
     
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+  
+  
     
      let url = "https://travelagenciesdeals.com/api/trips"
-    
-    @IBOutlet weak var dateoftriips: UILabel!
     
     
     @IBOutlet weak var homeTable: UITableView!
@@ -83,12 +71,12 @@ class ViewController_main_menu: UIViewController,UITableViewDelegate,UITableView
     
     
     var window: UIWindow?
-    //let sb = UIStoryboard(name: "login", bundle: nil)
+  
     
     
     func send(){
-        var vc:UIViewController
-        let def = UserDefaults.standard
+        //var vc:UIViewController
+       // let def = UserDefaults.standard
        // if let id = def.object(forKey: "userid")  {
                 var id = 0
             print("@@@@@@@@@@@@@@@@@@@@@@@@###############")
@@ -145,20 +133,7 @@ class ViewController_main_menu: UIViewController,UITableViewDelegate,UITableView
         return ofeer.count
     }
     
-   
- 
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+
     
 
 }

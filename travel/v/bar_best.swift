@@ -19,6 +19,8 @@ import Kingfisher
     @IBOutlet weak var titel: UILabel!
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var photo: UIImageView!
+    @IBOutlet weak var fav: UIButton!
+    
 }
 
 class bar_best : UIViewController,UITableViewDelegate,UITableViewDataSource {
@@ -33,6 +35,13 @@ class bar_best : UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var hometabel: UITableView!
    
     
+    
+    @objc class func connected(sender: UIButton){
+        let buttonTag = sender.tag
+        print(buttonTag)
+    }
+    
+   
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellay = tableView.dequeueReusableCell(withIdentifier: "cellaya" , for: indexPath)as! cellHomeee
         
@@ -47,11 +56,20 @@ class bar_best : UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         let resourpic = NSURL(string: ofeer[indexPath.row].photo)
         let resournewpic = ImageResource(downloadURL: resour as! URL)
+       
+        
+        //cellay.fav.addTarget(self, action:#selector(bar_best.connected(sender: cellay.fav)), for: .touchUpInside)
+
+        
+        
         
         
         // hna fe 7aga asmha imgresou
         cellay.logo.kf.setImage(with: resournew)
         cellay.photo.kf.setImage(with: resournewpic)
+        cellay.fav.tag = ofeer[indexPath.row].id
+       // cellay.fav.addTarget(self, action:#selector(bar_best.fa), for: UIControl.Event.touchUpInside)
+        
         
         
         return cellay
@@ -65,11 +83,7 @@ class bar_best : UIViewController,UITableViewDelegate,UITableViewDataSource {
         send()
         // Do any additional setup after loading the view.
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  
 
 
 
@@ -130,12 +144,6 @@ class bar_best : UIViewController,UITableViewDelegate,UITableViewDataSource {
          */
     }
 }
-
-
-
-
-
-
 
 
 

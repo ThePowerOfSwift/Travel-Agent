@@ -113,7 +113,7 @@ class tab_search: UIViewController {
                     self.present(alert, animated: true, completion: nil)
                     
                 }else{
-                    self.performSegue(withIdentifier: "done", sender: nil)
+                    //self.performSegue(withIdentifier: "done", sender: nil)
                 }
                 
                 

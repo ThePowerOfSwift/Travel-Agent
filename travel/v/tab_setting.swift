@@ -16,6 +16,23 @@ class tab_setting: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func home(_ sender: Any) {
+  
+        
+
+    }
+    @IBAction func showsidemenu(_ sender: Any) {
+        if(self.sidemenu.isHidden == true){
+            self.sidemenu.isHidden = false
+            self.sidemenu.setNeedsLayout()
+        }else{
+        self.sidemenu.isHidden = true
+        }
+
+      
+    }
+    @IBOutlet weak var sidemenu: UIView!
+    @IBOutlet weak var close: UIView!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -76,7 +76,19 @@ class bar_best : UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
 
 
-
+    @IBAction func sidemenu(_ sender: Any) {
+        if(self.sidemenu.isHidden == true){
+            self.sidemenu.isHidden = false
+            self.sidemenu.setNeedsLayout()
+        }else{
+            self.sidemenu.isHidden = true
+        }
+    }
+    
+    
+    
+    @IBOutlet weak var sidemenu: UIView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

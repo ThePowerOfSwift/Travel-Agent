@@ -38,6 +38,7 @@
 		2BE8D5F521501ED200AA2FEE /* ViewControllernewuser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE8D5F421501ED200AA2FEE /* ViewControllernewuser.swift */; };
 		518BADCEDFBC0833AF58ACC4 /* Pods_travel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03BE00D51203733D4A0EBB2B /* Pods_travel.framework */; };
 		AF1945662170EB8A00228BE3 /* trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1945652170EB8A00228BE3 /* trip.swift */; };
+		AF2AF65821AD71C30082C142 /* details.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2AF65721AD71C30082C142 /* details.swift */; };
 		AF2E7F0F21A444DF000714C9 /* checkcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2E7F0E21A444DF000714C9 /* checkcodeViewController.swift */; };
 		AF2E7F1121A44606000714C9 /* changepass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2E7F1021A44606000714C9 /* changepass.swift */; };
 		AF48986221A034160061CB3B /* bestofers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF48986121A034160061CB3B /* bestofers.swift */; };
@@ -112,6 +113,7 @@
 		5E993F5972EA396B6026E2D1 /* Pods-travel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-travel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-travel/Pods-travel.debug.xcconfig"; sourceTree = "<group>"; };
 		72B614F510F1A0593294ECAD /* Pods_travelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_travelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF1945652170EB8A00228BE3 /* trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trip.swift; sourceTree = "<group>"; };
+		AF2AF65721AD71C30082C142 /* details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = details.swift; sourceTree = "<group>"; };
 		AF2E7F0E21A444DF000714C9 /* checkcodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkcodeViewController.swift; sourceTree = "<group>"; };
 		AF2E7F1021A44606000714C9 /* changepass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changepass.swift; sourceTree = "<group>"; };
 		AF48986121A034160061CB3B /* bestofers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bestofers.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				AF1945652170EB8A00228BE3 /* trip.swift */,
 				AF2E7F0E21A444DF000714C9 /* checkcodeViewController.swift */,
 				AF2E7F1021A44606000714C9 /* changepass.swift */,
+				AF2AF65721AD71C30082C142 /* details.swift */,
 			);
 			path = v;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Calendar-iOS/Calendar_iOS.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 			);
@@ -487,6 +491,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Calendar_iOS.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 			);
@@ -515,6 +520,7 @@
 				2BDEDAEB2152324100E13C8D /* ViewControllercompany.swift in Sources */,
 				2BE2286A2157A35400C17F49 /* SWRevealViewController.m in Sources */,
 				2BE12795215941F40058709E /* search_result.swift in Sources */,
+				AF2AF65821AD71C30082C142 /* details.swift in Sources */,
 				2B28DEAC215A5B04001D3C6F /* profile-xlpager.swift in Sources */,
 				2B0038B62153C7990047FC25 /* tab_favo.swift in Sources */,
 				2BDDAEEF2153DA090014722D /* bar_company.swift in Sources */,

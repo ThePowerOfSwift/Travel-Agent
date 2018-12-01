@@ -7,24 +7,35 @@
 //
 
 import UIKit
+import SwiftyJSON
+
 
 class addfavourit: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    var user : Int
+    var trip  : Int
 
-        // Do any additional setup after loading the view.
+    init?(dict: [String : JSON]) {
+        guard let logoo = dict["photo"]?.string,let namee = dict["user_translation"]?[1]["name"].string else {
+            print("from model")
+            return nil
+        }
+        
+        var base = "https://travelagenciesdeals.com/"
+        self.logo = base+logoo
+        self.name = namee
+        
     }
+
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+
+
+
+
+
+
+
+

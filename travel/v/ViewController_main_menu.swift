@@ -20,11 +20,41 @@ class cellHome: UITableViewCell {
     @IBOutlet weak var photo: UIImageView!
     
     @IBOutlet weak var price: UILabel!
+    var openProfileActionadd : (()->())?
+    
+    @IBAction func penProfileActionadd(_ sender: UIButton) {
+        openProfileActionadd?()
+    }
     
 }
 class ViewController_main_menu: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+
+    @IBAction func action(_ sender: Any) {
+        
+        if let tybe:String = def.object(forKey: "ty") as? String{
+            //     tybe = UserDefaults.standard.object(forKey: "user")
+            
+            if tybe == "user"{
+                performSegue(withIdentifier: "user", sender: nil)
+                
+            }else{
+              performSegue(withIdentifier: "company", sender: nil)
+            }
+            
+            print(tybe)
+        }else{
+            
+           performSegue(withIdentifier: "withoutloginin", sender: nil)
+            
+            
+        }
+        
+        
+    }
     
+    @IBOutlet weak var profuleWithoutLogin: UIBarButtonItem!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         send()
@@ -52,17 +82,41 @@ class ViewController_main_menu: UIViewController,UITableViewDelegate,UITableView
 
         cellay.pic.kf.setImage(with: resournew)
         cellay.photo.kf.setImage(with: resournewpic)
+        
+        
+        cellay.openProfileActionadd = {
+//
+//            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "detail")as UIViewController
+//
+//            self.present(vc, animated: true, completion: nil)
+            
+            self.picofcompanys = self.ofeer[indexPath.row].photo
+            self.detailsontrips = self.ofeer[indexPath.row].detailss
+            self.labeloftribs = self.ofeer[indexPath.row].titel
+            self.priceoftribs = self.ofeer[indexPath.row].price
+            self.logooftrips = self.ofeer[indexPath.row].logo
+            if self.priceoftribs != 0 {
+            self.performSegue(withIdentifier: "detalissegue", sender: self)
+                
+            }else{print("sender error")}
+        }
+        
         return cellay
         
         
     }
     
+
     
     
   
-  
+    var logooftrips :String = ""
+    var picofcompanys : String = ""
+    var labeloftribs : String = ""
+    var priceoftribs : Int = 0
+    var detailsontrips : String = ""
     
-     let url = "https://travelagenciesdeals.com/api/trips"
+    let url = "https://travelagenciesdeals.com/api/trips"
     
     
     @IBOutlet weak var homeTable: UITableView!
@@ -72,13 +126,29 @@ class ViewController_main_menu: UIViewController,UITableViewDelegate,UITableView
     
     var window: UIWindow?
   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "details" {
+            let detailss = segue.destination as! details
+            
+            detailss.detailsontripss = detailsontrips
+            detailss.picofcompanyss = picofcompanys
+            detailss.labeloftribss = labeloftribs
+            detailss.priceoftribss = priceoftribs
+            detailss.logooftripss = logooftrips
+        }else{return}
+        
     
-    
+//        detailss.price.text = String(priceoftribs)
+//        detailss.picofcompany = picofcompanys
+//        detailss.logo = logooftrips
+
+    }
+     let def = UserDefaults.standard
     func send(){
         //var vc:UIViewController
-       // let def = UserDefaults.standard
-       // if let id = def.object(forKey: "userid")  {
-                var id = 0
+       
+        if let id = def.object(forKey: "userid")  {
+    
             print("@@@@@@@@@@@@@@@@@@@@@@@@###############")
             let parm = [
                 "user_id":id
@@ -120,11 +190,11 @@ class ViewController_main_menu: UIViewController,UITableViewDelegate,UITableView
                 }
             }
             
-       /* }else{
+        }else{
             print("+++++++++++++++++++++++++++++++++++++++")
          
         }
-        */
+    
     }
         
     
@@ -133,7 +203,24 @@ class ViewController_main_menu: UIViewController,UITableViewDelegate,UITableView
         return ofeer.count
     }
     
-
+    @IBAction func showsidemenu(_ sender: Any) {
+        if(self.sidemenu.isHidden == true){
+            self.sidemenu.isHidden = false
+            self.sidemenu.setNeedsLayout()
+        }else{
+            self.sidemenu.isHidden = true
+        }
+        
+    }
+    @IBAction func logout(_ sender: Any) {
+        
+        
+        dismiss(animated: true, completion: nil)
+        def.removeObject(forKey: "ty")
+        def.removeObject(forKey: "userid")
+        
+    }
+    @IBOutlet weak var sidemenu: UIView!
     
 
 }

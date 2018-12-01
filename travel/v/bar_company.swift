@@ -45,11 +45,36 @@ class bar_company: UIViewController,UITableViewDelegate,UITableViewDataSource {
      let url = "https://travelagenciesdeals.com/api/companies"
     var company = [companiesmodel]()
     @IBOutlet weak var hometabel: UITableView!
+    @IBOutlet weak var profuleWithoutLogin: UIBarButtonItem!
     
+    let def = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
         send()
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func action(_ sender: Any) {
+        
+        if let tybe:String = def.object(forKey: "ty") as? String{
+            //     tybe = UserDefaults.standard.object(forKey: "user")
+            
+            if tybe == "user"{
+                performSegue(withIdentifier: "user", sender: nil)
+                
+            }else{
+                performSegue(withIdentifier: "company", sender: nil)
+            }
+            
+            print(tybe)
+        }else{
+            
+            performSegue(withIdentifier: "withoutloginin", sender: nil)
+            
+            
+        }
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -127,7 +152,17 @@ class bar_company: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     
     
-    
+    @IBAction func showsidemenu(_ sender: Any) {
+        if(self.sidemenu.isHidden == true){
+            self.sidemenu.isHidden = false
+            self.sidemenu.setNeedsLayout()
+        }else{
+            self.sidemenu.isHidden = true
+        }
+        
+        
+    }
+    @IBOutlet weak var sidemenu: UIView!
     
     
 }

@@ -15,7 +15,9 @@ class login: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let def = UserDefaults.standard
+       
+        
         // Do any additional setup after loading the view.
     }
 
@@ -62,6 +64,11 @@ class login: UIViewController {
                     print("§§§§§§§§§§§§§§§§§§§§§§§§")
                     print(id)
                     self.defult.setValue(id, forKey: "userid")
+                    if let tybe = jsoncode["user"]["type"].string{
+                        self.defult.setValue(tybe, forKey: "ty")
+                        print(tybe)
+                    }
+                    
                    
                     
                    self.performSegue(withIdentifier: "loginggo", sender: self)

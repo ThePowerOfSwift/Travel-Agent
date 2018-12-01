@@ -21,6 +21,17 @@ import Kingfisher
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var fav: UIButton!
     
+    var openProfileActionadd : (()->())?
+    
+    @IBAction func penProfileActionadd(_ sender: UIButton) {
+        openProfileActionadd?()
+    }
+    var openProfileAction : (()->())?
+    
+    @IBAction func penProfileAction(_ sender: UIButton) {
+        openProfileAction?()
+    }
+    
 }
 
 class bar_best : UIViewController,UITableViewDelegate,UITableViewDataSource {
@@ -29,17 +40,20 @@ class bar_best : UIViewController,UITableViewDelegate,UITableViewDataSource {
         
     }
     
-    
+    let urldlettri = "https://travelagenciesdeals.com/api/unfavorite_offer"
     let url = "https://travelagenciesdeals.com/api/trips"
+      let urltri = "https://travelagenciesdeals.com/api/favorite_offer"
     var ofeer = [besttrips]()
     @IBOutlet weak var hometabel: UITableView!
+        
+    @IBOutlet weak var ProfilWithoutLogin: UIBarButtonItem!
+    @IBOutlet weak var profileuser: UIBarButtonItem!
+    
+    @IBOutlet weak var profilecompany: UIBarButtonItem!
    
     
     
-    @objc class func connected(sender: UIButton){
-        let buttonTag = sender.tag
-        print(buttonTag)
-    }
+    
     
    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -52,14 +66,14 @@ class bar_best : UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         
         let resour = NSURL(string: ofeer[indexPath.row].logo)
-        let resournew = ImageResource(downloadURL: resour as! URL)
+        let resournew = ImageResource(downloadURL: resour! as URL)
         
         let resourpic = NSURL(string: ofeer[indexPath.row].photo)
-        let resournewpic = ImageResource(downloadURL: resour as! URL)
+        let resournewpic = ImageResource(downloadURL: resourpic! as URL)
        
         
-        //cellay.fav.addTarget(self, action:#selector(bar_best.connected(sender: cellay.fav)), for: .touchUpInside)
-
+       // cellay.fav.addTarget(self, action:#selector(bar_best.connected(sender: cellay.fav)), for: .touchUpInside)
+       
         
         
         
@@ -67,14 +81,50 @@ class bar_best : UIViewController,UITableViewDelegate,UITableViewDataSource {
         // hna fe 7aga asmha imgresou
         cellay.logo.kf.setImage(with: resournew)
         cellay.photo.kf.setImage(with: resournewpic)
-        cellay.fav.tag = ofeer[indexPath.row].id
+        let tripid = ofeer[indexPath.row].id
        // cellay.fav.addTarget(self, action:#selector(bar_best.fa), for: UIControl.Event.touchUpInside)
+        
+        cellay.openProfileActionadd = {
+            
+            if cellay.fav.currentImage == UIImage(named: "unlike") {
+            self.addfovo(idtri: tripid)
+                cellay.fav.setImage(UIImage(named: "menu bar-fav"), for: .normal)}else{
+                self.unfovo(idtri: tripid)
+                cellay.fav.setImage(UIImage(named: "unlike"), for: .normal)            }
+            
+           
+            }
+        cellay.openProfileAction = {
+            
+        }
         
         
         
         return cellay
     }
 
+    @IBAction func action(_ sender: Any) {
+        
+        if let tybe:String = def.object(forKey: "ty") as? String{
+            //     tybe = UserDefaults.standard.object(forKey: "user")
+            
+            if tybe == "user"{
+                performSegue(withIdentifier: "user", sender: nil)
+                
+            }else{
+                performSegue(withIdentifier: "company", sender: nil)
+            }
+            
+            print(tybe)
+        }else{
+            
+            performSegue(withIdentifier: "withoutloginin", sender: nil)
+            
+            
+        }
+        
+        
+    }
 
     @IBAction func sidemenu(_ sender: Any) {
         if(self.sidemenu.isHidden == true){
@@ -93,21 +143,113 @@ class bar_best : UIViewController,UITableViewDelegate,UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         send()
+        
         // Do any additional setup after loading the view.
     }
   
 
 
+    var deleget = ""
+    var delegetun = ""
+let def = UserDefaults.standard
+    func addfovo(idtri:Int) {
+        
+        
+        if let id = def.object(forKey: "userid")  {
+            
+            let parm = [
+                "user_id":id,
+                "offer_id":idtri
+            ]
+            
+            
+            Alamofire.request(urltri, method: .post, parameters: parm, encoding: URLEncoding.default, headers: nil).responseJSON { re in
+                switch re.result
+                {
+                case .failure(let erro):
+                    print("********////",erro)
+                case .success(let value):
+                    
+                    let jsoncode = JSON(value)
+                    guard let data = jsoncode["success"].int else { return }
+                    
+                    
+                    if data == 1 {
+                        
+                        
+                        self.deleget = "done"
+                        
+                        print("done")
+                        
+                    }else{self.deleget = "not work"}
+                    self.hometabel.reloadData()
+                    
+                    
+                    
+                    
+                    
+                }
+                
+                
+                
+            }
+        }
+        
+    }
 
-
+    
+    func unfovo(idtri:Int) {
+        
+        let def = UserDefaults.standard
+        if let id = def.object(forKey: "userid")  {
+            
+            let parm = [
+                "user_id":id,
+                "offer_id":idtri
+            ]
+            
+            
+            Alamofire.request(urldlettri, method: .post, parameters: parm, encoding: URLEncoding.default, headers: nil).responseJSON { re in
+                switch re.result
+                {
+                case .failure(let erro):
+                    print("********////",erro)
+                case .success(let value):
+                    
+                    let jsoncode = JSON(value)
+                    guard let data = jsoncode["success"].int else { return }
+                    
+                    
+                    if data == 1 {
+                        
+                        
+                        self.delegetun = "doneun"
+                        
+                        print("done")
+                        
+                    }else{self.delegetun = "not work"}
+                    self.hometabel.reloadData()
+                    
+                    
+                    
+                    
+                    
+                }
+                
+                
+                
+            }
+        }
+        
+    }
 
     
     
     func send(){
         var vc:UIViewController
         let def = UserDefaults.standard
-        // if let id = def.object(forKey: "userid")  {
-        var id = 0
+        if let id = def.object(forKey: "userid")  {
+        
         print("@@@@@@@@@@@@@@@@@@@@@@@@###############")
         let parm = [
             "user_id":id
@@ -141,7 +283,7 @@ class bar_best : UIViewController,UITableViewDelegate,UITableViewDataSource {
                      trip.price = (ofeer["price"].int)!
                      */
                     
-                    
+                }
                 }
                 
                 

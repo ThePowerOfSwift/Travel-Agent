@@ -18,10 +18,21 @@ class tab_favo: UIViewController,UITableViewDelegate,UITableViewDataSource {
         return cell
     }
     
+    @IBAction func showsidemenu(_ sender: Any) {
+        if(self.sidemenu.isHidden == true){
+            self.sidemenu.isHidden = false
+            self.sidemenu.setNeedsLayout()
+        }else{
+            self.sidemenu.isHidden = true
+        }
+        
+        
+    }
+    @IBOutlet weak var sidemenu: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 

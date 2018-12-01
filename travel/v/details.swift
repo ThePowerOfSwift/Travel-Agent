@@ -7,14 +7,46 @@
 //
 
 import UIKit
+import Kingfisher
 
 class details: UIViewController {
 
+    @IBOutlet weak var book: UIButton!
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var companypic: UIImageView!
+    @IBOutlet weak var pic: UIImageView!
+    @IBOutlet weak var detai: UILabel!
+    @IBOutlet weak var setting: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        detai.text = detailsontripss
+        label.text = labeloftribss
+        price.text = String(priceoftribss)
+        let resourpic = NSURL(string:picofcompanyss )
+        let resournewpic = ImageResource(downloadURL: resourpic! as URL)
+        companypic.kf.setImage(with: resournewpic)
+        
+        let resour = NSURL(string:logooftripss )
+        let resournew = ImageResource(downloadURL: resour! as URL)
+        pic.kf.setImage(with: resournew)
+        
+        detai.text = detailsontripss
+        
     }
+    
+    @IBAction func booking(_ sender: Any) {
+        
+      print("no API")
+    }
+    var logooftripss :String = ""
+    var picofcompanyss : String = ""
+    var labeloftribss : String = ""
+    var priceoftribss : Int = 0
+    var detailsontripss : String = ""
+   
     
 
     /*

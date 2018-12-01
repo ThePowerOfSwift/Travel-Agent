@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.7.3)
   - Calendar-iOS (0.13)
   - Kingfisher (4.10.0)
+  - SideMenu (5.0.1)
   - SwiftyJSON (4.2.0)
   - XLPagerTabStrip (8.0.1)
 
@@ -9,6 +10,7 @@ DEPENDENCIES:
   - Alamofire
   - Calendar-iOS
   - Kingfisher
+  - SideMenu
   - SwiftyJSON
   - XLPagerTabStrip
 
@@ -17,6 +19,7 @@ SPEC REPOS:
     - Alamofire
     - Calendar-iOS
     - Kingfisher
+    - SideMenu
     - SwiftyJSON
     - XLPagerTabStrip
 
@@ -24,9 +27,10 @@ SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   Calendar-iOS: a7bb0e6d2cee372e7e3de98d44d60ac7364be7f3
   Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
+  SideMenu: 87efd943737bb83aedf0358884d09fcf5576636d
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   XLPagerTabStrip: c908b17cbf42fcd2598ee1adfc49bae25444d88a
 
-PODFILE CHECKSUM: be51a1ab2a78f2bfb05623a792994cf2d1770d54
+PODFILE CHECKSUM: 309f1e91e56b6d745a06d181957c19227b90ac8c
 
 COCOAPODS: 1.5.3

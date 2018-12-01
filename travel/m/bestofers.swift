@@ -18,9 +18,11 @@ class besttrips: NSObject {
     var web:String = ""
     var titel : String
     var id : Int
+    var detailss : String
     
     init?(dict: [String : JSON]) {
-        guard let pricee = dict["price"]?.int,let datee = dict["date"]?.string,let logoo = dict["logo"]?.string,let photoo = dict["photo"]?.string,let titell = dict["triptranslation"]?[1]["title"].string, let idd = dict["id"]?.int else {
+        guard let pricee = dict["price"]?.int,let datee = dict["date"]?.string,let logoo = dict["logo"]?.string,let photoo = dict["photo"]?.string,let titell = dict["triptranslation"]?[1]["title"].string,
+            let detail = dict["triptranslation"]?[1]["details"].string, let idd = dict["id"]?.int else {
         print("from model")
             return nil
         }
@@ -31,6 +33,7 @@ class besttrips: NSObject {
         self.photo = base+photoo
         self.titel = titell
         self.id = idd
+        self.detailss = detail
     }
     
 }

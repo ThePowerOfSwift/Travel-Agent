@@ -17,9 +17,9 @@ class tab_setting: UIViewController {
     }
 
     @IBAction func home(_ sender: Any) {
-  
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "favo")as UIViewController
         
-
+        
     }
     @IBAction func showsidemenu(_ sender: Any) {
         if(self.sidemenu.isHidden == true){
@@ -32,7 +32,7 @@ class tab_setting: UIViewController {
       
     }
     @IBOutlet weak var sidemenu: UIView!
-    @IBOutlet weak var close: UIView!
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

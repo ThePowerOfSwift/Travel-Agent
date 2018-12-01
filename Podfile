@@ -11,6 +11,7 @@ pod 'Alamofire'
 pod 'SwiftyJSON'
 pod 'Kingfisher'
 pod 'Calendar-iOS'
+pod 'SideMenu'
 
 
 

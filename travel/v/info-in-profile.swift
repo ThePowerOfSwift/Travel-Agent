@@ -8,19 +8,11 @@
 
 import UIKit
 import XLPagerTabStrip
-class info_in_profile: UIViewController,UITableViewDataSource,UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellaya", for: indexPath)
-        return cell
-    }
-    
+class info_in_profile: UIViewController {
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 
@@ -32,8 +24,5 @@ class info_in_profile: UIViewController,UITableViewDataSource,UITableViewDelegat
 
 
 }
-extension info_in_profile : IndicatorInfoProvider{
-    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: "INFO")
-}
-}
+
+

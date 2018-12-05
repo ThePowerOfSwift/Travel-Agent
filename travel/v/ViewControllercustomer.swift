@@ -103,15 +103,12 @@ class ViewControllercustomer: UIViewController, UIImagePickerControllerDelegate,
                 case .failure(let erro):
                     print("********////",erro)
                 case .success(let value):
-               print("fuck")
-                    //al if  al awlanya m4 48ala
-                    //error
+               
                
                     
                     let jsoncode = JSON(value)
                     if let id = jsoncode["errors"]["email"].string{
-                        print("§§§§§§§§§§§§§§§§§§§§§§§§")
-                        print(id)
+                        
                         let alert = UIAlertController(title: "Alert", message: id, preferredStyle: UIAlertController.Style.alert)
                         alert.addAction(UIAlertAction(title: "Click", style: UIAlertAction.Style.default, handler: nil))
                         self.present(alert, animated: true, completion: nil)
@@ -208,7 +205,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         }else {
             
         checkk.setImage(UIImage(named: "check box.png"), for: .normal)
-            print("doneomge")
+            
             
         }
         

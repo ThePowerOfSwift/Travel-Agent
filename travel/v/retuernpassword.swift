@@ -1,20 +1,15 @@
-//
-//  retuernpassword.swift
-//  travel
-//
-//  Created by Abdo on 9/18/18.
-//  Copyright © 2018 Abdo. All rights reserved.
-//
+
 
 import UIKit
 import Alamofire
+import SideMenu
 import SwiftyJSON
-
-
-
 
 class retuernpassword: UIViewController {
 
+    @IBAction func BACK(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -31,12 +26,7 @@ class retuernpassword: UIViewController {
             self.present(alert, animated: true, completion: nil)
             
         }else{send()}
-        
 
-        
-
-        
-        
     }
     
     
@@ -44,13 +34,12 @@ class retuernpassword: UIViewController {
     
     func send(){
       
-        var id = mail.text
-        print("@@@@@@@@@@@@@@@@@@@@@@@@###############")
+        let id = mail.text
         let parm = [
             "email":id
         ]
         
-        Alamofire.request(url, method: .post, parameters: parm, encoding: URLEncoding.default, headers: nil).responseJSON { re in
+        Alamofire.request(url, method: .post, parameters: parm as Parameters, encoding: URLEncoding.default, headers: nil).responseJSON { re in
             switch re.result
             {
             case .failure(let erro):
@@ -67,14 +56,8 @@ class retuernpassword: UIViewController {
                 }else{
                     self.performSegue(withIdentifier: "check", sender: nil)
                     }
-             
-                
-                
-                
             }
         }
-        
-       
     }
     
     

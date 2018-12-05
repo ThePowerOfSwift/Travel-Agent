@@ -34,6 +34,13 @@ import Kingfisher
     
 }
 
+var logooftrips :String = ""
+var picofcompanys : String = ""
+var labeloftribs : String = ""
+var priceoftribs : Int = 0
+var detailsontrips : String = ""
+
+
 class bar_best : UIViewController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ofeer.count
@@ -59,7 +66,7 @@ class bar_best : UIViewController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellay = tableView.dequeueReusableCell(withIdentifier: "cellaya" , for: indexPath)as! cellHomeee
         
-        print(ofeer[indexPath.row].date)
+        
         cellay.date.text = ofeer[indexPath.row].date
         cellay.price.text = String(ofeer[indexPath.row].price)
         cellay.titel.text = ofeer[indexPath.row].titel
@@ -95,7 +102,15 @@ class bar_best : UIViewController,UITableViewDelegate,UITableViewDataSource {
            
             }
         cellay.openProfileAction = {
-            
+            self.picofcompanys = self.ofeer[indexPath.row].photo
+            self.detailsontrips = self.ofeer[indexPath.row].detailss
+            self.labeloftribs = self.ofeer[indexPath.row].titel
+            self.priceoftribs = self.ofeer[indexPath.row].price
+            self.logooftrips = self.ofeer[indexPath.row].logo
+            if self.priceoftribs != 0 {
+                self.performSegue(withIdentifier: "details", sender: self)
+                
+            }else{return}
         }
         
         
@@ -115,7 +130,7 @@ class bar_best : UIViewController,UITableViewDelegate,UITableViewDataSource {
                 performSegue(withIdentifier: "company", sender: nil)
             }
             
-            print(tybe)
+            
         }else{
             
             performSegue(withIdentifier: "withoutloginin", sender: nil)
@@ -147,7 +162,28 @@ class bar_best : UIViewController,UITableViewDelegate,UITableViewDataSource {
         // Do any additional setup after loading the view.
     }
   
-
+    var logooftrips :String = ""
+    var picofcompanys : String = ""
+    var labeloftribs : String = ""
+    var priceoftribs : Int = 0
+    var detailsontrips : String = ""
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "details" {
+            let detailss = segue.destination as! details
+            
+            detailss.detailsontripss = detailsontrips
+            detailss.picofcompanyss = picofcompanys
+            detailss.labeloftribss = labeloftribs
+            detailss.priceoftribss = priceoftribs
+            detailss.logooftripss = logooftrips
+        }else{return}
+        
+        
+        //        detailss.price.text = String(priceoftribs)
+        //        detailss.picofcompany = picofcompanys
+        //        detailss.logo = logooftrips
+        
+    }
 
     var deleget = ""
     var delegetun = ""
@@ -229,10 +265,7 @@ let def = UserDefaults.standard
                         
                     }else{self.delegetun = "not work"}
                     self.hometabel.reloadData()
-                    
-                    
-                    
-                    
+             
                     
                 }
                 
@@ -250,7 +283,6 @@ let def = UserDefaults.standard
         let def = UserDefaults.standard
         if let id = def.object(forKey: "userid")  {
         
-        print("@@@@@@@@@@@@@@@@@@@@@@@@###############")
         let parm = [
             "user_id":id
         ]
@@ -272,16 +304,10 @@ let def = UserDefaults.standard
                         self.ofeer.append(trip)
                         print("done")
                         
-                    }else{print("ggggggggggggogoggoggg")}
+                    }else{return}
                     self.hometabel.reloadData()
                     
                     
-                    /*
-                     trip.date = (ofeer["date"].string)!
-                     trip.logo = (ofeer["logo"].string)!
-                     trip.photo = (ofeer["photo"].string)!
-                     trip.price = (ofeer["price"].int)!
-                     */
                     
                 }
                 }
@@ -291,11 +317,7 @@ let def = UserDefaults.standard
             }
         }
         
-        /* }else{
-         print("+++++++++++++++++++++++++++++++++++++++")
-         
-         }
-         */
+        
     }
 }
 

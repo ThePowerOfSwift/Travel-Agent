@@ -18,6 +18,10 @@ class details: UIViewController {
     @IBOutlet weak var pic: UIImageView!
     @IBOutlet weak var detai: UILabel!
     @IBOutlet weak var setting: UIBarButtonItem!
+   
+    @IBAction func BACK(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -21,7 +21,9 @@ class checkcodeViewController: UIViewController {
     let url = "https://travelagenciesdeals.com/api/checkcode"
     @IBOutlet weak var mail: UITextField!
     @IBOutlet weak var code: UITextField!
-
+    @IBAction func BACK(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     @IBAction func send(_ sender: Any) {
         
         if (mail.text?.isEmpty)!{
@@ -48,7 +50,6 @@ class checkcodeViewController: UIViewController {
         
         var id = mail.text
        var codee = code.text
-        print("@@@@@@@@@@@@@@@@@@@@@@@@###############")
         let parm = [
             "email":id,
             "code" :codee

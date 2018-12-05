@@ -35,7 +35,6 @@
 		2BE2286A2157A35400C17F49 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE228682157A35300C17F49 /* SWRevealViewController.m */; };
 		2BE2286C2157A60700C17F49 /* ViewController11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE2286B2157A60700C17F49 /* ViewController11.swift */; };
 		2BE2AD8D214F78C900488F64 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE2AD8C214F78C900488F64 /* login.swift */; };
-		2BE8D5F521501ED200AA2FEE /* ViewControllernewuser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE8D5F421501ED200AA2FEE /* ViewControllernewuser.swift */; };
 		518BADCEDFBC0833AF58ACC4 /* Pods_travel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03BE00D51203733D4A0EBB2B /* Pods_travel.framework */; };
 		AF1945662170EB8A00228BE3 /* trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1945652170EB8A00228BE3 /* trip.swift */; };
 		AF2AF65821AD71C30082C142 /* details.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2AF65721AD71C30082C142 /* details.swift */; };
@@ -43,7 +42,6 @@
 		AF2E7F1121A44606000714C9 /* changepass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2E7F1021A44606000714C9 /* changepass.swift */; };
 		AF48986221A034160061CB3B /* bestofers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF48986121A034160061CB3B /* bestofers.swift */; };
 		AFBE8CB121A209F5009212B4 /* companiesmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBE8CB021A209F5009212B4 /* companiesmodel.swift */; };
-		AFE5E7092170CC48008945F8 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE5E7082170CC48008945F8 /* TableViewController.swift */; };
 		AFF1921F21642B9300DFB75D /* imgpicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1921E21642B9300DFB75D /* imgpicker.swift */; };
 		AFF6C94D2163AA2E00D5AA5E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFF6C94C2163AA2E00D5AA5E /* GoogleService-Info.plist */; };
 		C6B34C41EC4D929D7A3FA2B4 /* Pods_travelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B614F510F1A0593294ECAD /* Pods_travelTests.framework */; };
@@ -106,7 +104,6 @@
 		2BE228692157A35400C17F49 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "SWRevealViewController-master/SWRevealViewController/SWRevealViewController.h"; sourceTree = SOURCE_ROOT; };
 		2BE2286B2157A60700C17F49 /* ViewController11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController11.swift; sourceTree = "<group>"; };
 		2BE2AD8C214F78C900488F64 /* login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
-		2BE8D5F421501ED200AA2FEE /* ViewControllernewuser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllernewuser.swift; sourceTree = "<group>"; };
 		3F3CF346491F82ED40FB4353 /* Pods-travelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-travelTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-travelTests/Pods-travelTests.release.xcconfig"; sourceTree = "<group>"; };
 		4AE87E4C97DC5C73F508EE9B /* Pods_travelUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_travelUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54896488573BC0E3D22C911D /* Pods-travel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-travel.release.xcconfig"; path = "Pods/Target Support Files/Pods-travel/Pods-travel.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,7 +115,6 @@
 		AF2E7F1021A44606000714C9 /* changepass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changepass.swift; sourceTree = "<group>"; };
 		AF48986121A034160061CB3B /* bestofers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bestofers.swift; sourceTree = "<group>"; };
 		AFBE8CB021A209F5009212B4 /* companiesmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = companiesmodel.swift; sourceTree = "<group>"; };
-		AFE5E7082170CC48008945F8 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		AFF1921E21642B9300DFB75D /* imgpicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imgpicker.swift; sourceTree = "<group>"; };
 		AFF6C94C2163AA2E00D5AA5E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -221,8 +217,6 @@
 			isa = PBXGroup;
 			children = (
 				2BE2AD8C214F78C900488F64 /* login.swift */,
-				AFE5E7082170CC48008945F8 /* TableViewController.swift */,
-				2BE8D5F421501ED200AA2FEE /* ViewControllernewuser.swift */,
 				2BDEF35B215131D900524857 /* retuernpassword.swift */,
 				2B0038B32153C6CF0047FC25 /* tab_setting.swift */,
 				2B0038B52153C7990047FC25 /* tab_favo.swift */,
@@ -513,7 +507,6 @@
 				2BE2AD8D214F78C900488F64 /* login.swift in Sources */,
 				AF2E7F1121A44606000714C9 /* changepass.swift in Sources */,
 				2B28DEAA215A5A77001D3C6F /* ofeers-in-profile.swift in Sources */,
-				2BE8D5F521501ED200AA2FEE /* ViewControllernewuser.swift in Sources */,
 				AF2E7F0F21A444DF000714C9 /* checkcodeViewController.swift in Sources */,
 				2B28DEA8215A58F7001D3C6F /* info-in-profile.swift in Sources */,
 				AF48986221A034160061CB3B /* bestofers.swift in Sources */,
@@ -536,7 +529,6 @@
 				2B0038BC2153D2DD0047FC25 /* bar_menu.swift in Sources */,
 				2BE2286C2157A60700C17F49 /* ViewController11.swift in Sources */,
 				2BDDD8912156B9530071657C /* bookingNow.swift in Sources */,
-				AFE5E7092170CC48008945F8 /* TableViewController.swift in Sources */,
 				2B0038B22153B90E0047FC25 /* ViewController_main_menu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

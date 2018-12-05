@@ -23,7 +23,7 @@ class besttrips: NSObject {
     init?(dict: [String : JSON]) {
         guard let pricee = dict["price"]?.int,let datee = dict["date"]?.string,let logoo = dict["logo"]?.string,let photoo = dict["photo"]?.string,let titell = dict["triptranslation"]?[1]["title"].string,
             let detail = dict["triptranslation"]?[1]["details"].string, let idd = dict["id"]?.int else {
-        print("from model")
+        
             return nil
         }
         var base = "https://travelagenciesdeals.com/"

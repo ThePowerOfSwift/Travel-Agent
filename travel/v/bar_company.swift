@@ -17,6 +17,11 @@ class cellHomee: UITableViewCell{
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var rate: UILabel!
     
+    var openProfileActionadd : (()->())?
+    
+    @IBAction func penProfileActionadd(_ sender: UIButton) {
+        openProfileActionadd?()
+    }
     
 }
 
@@ -24,12 +29,14 @@ class bar_company: UIViewController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return company.count
     }
+    var logooftrips :String = ""
+    
+    var labeloftribs : String = ""
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellaya", for: indexPath)as! cellHomee
-        
-        print("4444444444444444444444444444444")
-        
+            
         
         
         
@@ -40,6 +47,10 @@ class bar_company: UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         
         cell.pic.kf.setImage(with: resournew)
+        cell.openProfileActionadd = {
+            self.logooftrips  = self.company[indexPath.row].logo
+            self.labeloftribs = self.company[indexPath.row].name
+        }
         return cell
     }
      let url = "https://travelagenciesdeals.com/api/companies"
@@ -102,7 +113,6 @@ class bar_company: UIViewController,UITableViewDelegate,UITableViewDataSource {
         let def = UserDefaults.standard
         // if let id = def.object(forKey: "userid")  {
         var id = 0
-        print("@@@@@@@@@@@@@@@@@@@@@@@@###############")
         let parm = [
             "user_id":id
         ]
@@ -124,7 +134,7 @@ class bar_company: UIViewController,UITableViewDelegate,UITableViewDataSource {
                         self.company.append(trip)
                         print("done")
                         
-                    }else{print("ggggggggggggogoggoggg")}
+                    }else{return}
                     self.hometabel.reloadData()
                     
                     

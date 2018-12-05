@@ -42,7 +42,7 @@ class ViewController_main_menu: UIViewController,UITableViewDelegate,UITableView
               performSegue(withIdentifier: "company", sender: nil)
             }
             
-            print(tybe)
+           
         }else{
             
            performSegue(withIdentifier: "withoutloginin", sender: nil)
@@ -53,7 +53,7 @@ class ViewController_main_menu: UIViewController,UITableViewDelegate,UITableView
         
     }
     
-    @IBOutlet weak var profuleWithoutLogin: UIBarButtonItem!
+    
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,10 +85,7 @@ class ViewController_main_menu: UIViewController,UITableViewDelegate,UITableView
         
         
         cellay.openProfileActionadd = {
-//
-//            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "detail")as UIViewController
-//
-//            self.present(vc, animated: true, completion: nil)
+
             
             self.picofcompanys = self.ofeer[indexPath.row].photo
             self.detailsontrips = self.ofeer[indexPath.row].detailss
@@ -98,7 +95,7 @@ class ViewController_main_menu: UIViewController,UITableViewDelegate,UITableView
             if self.priceoftribs != 0 {
             self.performSegue(withIdentifier: "detalissegue", sender: self)
                 
-            }else{print("sender error")}
+            }else{}
         }
         
         return cellay
@@ -110,11 +107,7 @@ class ViewController_main_menu: UIViewController,UITableViewDelegate,UITableView
     
     
   
-    var logooftrips :String = ""
-    var picofcompanys : String = ""
-    var labeloftribs : String = ""
-    var priceoftribs : Int = 0
-    var detailsontrips : String = ""
+    
     
     let url = "https://travelagenciesdeals.com/api/trips"
     
@@ -125,7 +118,11 @@ class ViewController_main_menu: UIViewController,UITableViewDelegate,UITableView
     
     
     var window: UIWindow?
-  
+    var logooftrips :String = ""
+    var picofcompanys : String = ""
+    var labeloftribs : String = ""
+    var priceoftribs : Int = 0
+    var detailsontrips : String = ""
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "details" {
             let detailss = segue.destination as! details
@@ -149,7 +146,7 @@ class ViewController_main_menu: UIViewController,UITableViewDelegate,UITableView
        
         if let id = def.object(forKey: "userid")  {
     
-            print("@@@@@@@@@@@@@@@@@@@@@@@@###############")
+            
             let parm = [
                 "user_id":id
             ]
@@ -169,9 +166,9 @@ class ViewController_main_menu: UIViewController,UITableViewDelegate,UITableView
                         
                             
                            self.ofeer.append(trip)
-                            print("done")
                             
-                        }else{print("ggggggggggggogoggoggg")}
+                            
+                        }else{return}
                         self.homeTable.reloadData()
 
                         
@@ -191,7 +188,7 @@ class ViewController_main_menu: UIViewController,UITableViewDelegate,UITableView
             }
             
         }else{
-            print("+++++++++++++++++++++++++++++++++++++++")
+            return
          
         }
     

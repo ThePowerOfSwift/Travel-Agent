@@ -12,6 +12,9 @@ import Alamofire
 
 class changepass: UIViewController {
 
+    @IBAction func BACK(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,7 +34,7 @@ class changepass: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }else{send()
-            print("dp**********************")
+            
         }
         
         
@@ -48,7 +51,6 @@ class changepass: UIViewController {
         
         var id = mail.text
         var codee = pass.text
-        print("@@@@@@@@@@@@@@@@@@@@@@@@###############")
         let parm = [
             "email":id,
             "password" :codee

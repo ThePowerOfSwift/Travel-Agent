@@ -22,11 +22,11 @@ class ViewController: UIViewController {
 
     
     @IBAction func arbic(_ sender: Any) {
-        print("arabic")
+       
     }
     
     @IBAction func english(_ sender: Any) {
-        print("english")
+        
     }
 }
 

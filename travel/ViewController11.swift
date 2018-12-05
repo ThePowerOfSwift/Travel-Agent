@@ -26,7 +26,7 @@ side()
     @IBOutlet var menue: UIButton!
     func side() {
         if revealViewController() != nil {
-            print("done")
+            
             
             menue.target(forAction: #selector(SWRevealViewController.revealToggle(_:)), withSender: revealViewController())
             

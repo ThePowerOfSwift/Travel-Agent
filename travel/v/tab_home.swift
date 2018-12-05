@@ -11,6 +11,20 @@ import Alamofire
 import SwiftyJSON
 
 class tab_search: UIViewController {
+    
+    
+    
+    @IBAction func exchange(_ sender: Any) {
+        var from = self.from.text
+        var to = self.to.text
+        self.to.text = from
+        self.to.text = to
+    }
+    
+    /*
+     
+     no data result from postMan
+     */
 
     @IBOutlet weak var fromdate: UITextField!
     @IBOutlet weak var todate: UITextField!
@@ -87,7 +101,6 @@ class tab_search: UIViewController {
         var name = companyname.text
         var adult = adults.text
         
-        print("@@@@@@@@@@@@@@@@@@@@@@@@###############")
         let parm = [
             "company_name":name,
             "section" :"study",
